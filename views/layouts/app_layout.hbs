@@ -1,0 +1,30 @@
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<title>{{title}}</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/sweetalert2.js"></script>
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/pagination.min.js"></script>
+        {{#eq path '/'}}
+            <link rel="stylesheet" href="css/home.css">   
+        {{/eq}}
+        {{#eq path '/tiendas'}}
+            <link rel="stylesheet" href="css/store.css">
+        {{/eq}}
+       
+	</head>
+	<body>
+        <div class="container">
+            {{> sidebar}}
+            <div class="main">
+                {{{ body }}} 
+            </div>
+        </div>
+        <script type="module" src="js/mainUI.js"></script>
+        {{#eq path '/tiendas'}}
+            <script type="module" src="js/storeUI.js"></script>
+        {{/eq}}
+	</body>
+</html>

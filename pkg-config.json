@@ -1,0 +1,6 @@
+{
+	"scripts": "build/**/*.js",
+	"assets": ["views/**/*", "public/**/*"],
+	"targets": ["node14-win-x64"],
+	"outputPath": "dist"
+}

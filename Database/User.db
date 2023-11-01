@@ -1,0 +1,3 @@
+{"name":"Monica","lastname":"Hidrugo","username":"mhidrugo","phone":"","email":"contacto@eltallercitodemonica.com","password":"$2b$10$6WINgBuZLIZB5MBwm.tSIeDdk5fnLU3Sg5sHXB.fHcJBHPQ0Vbkiy","id_num":"93979253","created_at":{"$$date":1698619511399},"_id":"Dft7vib9MidBTV7f"}
+{"name":"admin","lastname":"admin","username":"admin","phone":"","email":"admin@admin.com","password":"$2b$10$2G4K9/yOwvGizapu.MmpGOOCxsAaGnG9ERlakP3MXf97xnDxQ0Fx6","id_num":"admin","created_at":{"$$date":1698621255027},"_id":"TK8q22Kl1cjylfR1"}
+{"name":"Nelson","lastname":"Gamero","username":"ngamero","phone":"","email":"ngamero@nelsongamero.com","password":"$2b$10$1cE92J/UivtL0X/EnbKNUumpCh31w8Ru0S6OKCYDtahH86auBCPte","id_num":"77280515","created_at":{"$$date":1698617583569},"_id":"pfXMLvaRNS0mTLl5"}

@@ -1,0 +1,1 @@
+<h1>Categorías</h1>
