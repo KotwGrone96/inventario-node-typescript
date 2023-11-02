@@ -150,8 +150,10 @@ const handlePaginationButtons = () => {
 	});
 };
 const getStoreTable = async (page = 0) => {
+	const input = document.getElementById('store_name');
+	const { value } = input;
 	try {
-		const res = await fetch(`/table?type=stores&page=${page}`);
+		const res = await fetch(`/table?type=stores&page=${page}&s=${value}`);
 		const data = await res.json();
 		if (!data.ok) {
 			console.log(data);
@@ -236,11 +238,17 @@ const handleCSVfile = async () => {
 	});
 };
 
+const searchStores = (evt) => {
+	evt.preventDefault();
+	getStoreTable();
+};
+
 window.addEventListener('DOMContentLoaded', () => {
 	const btn_add_store = document.getElementById('add_btn');
 	const btn_add_csv_btn = document.getElementById('add_csv_btn');
+	const search_form = document.getElementById('search_store');
 	btn_add_store.addEventListener('click', () => add_ites(btn_add_store));
 	btn_add_csv_btn.addEventListener('click', () => handleCSVfile());
-
+	search_form.addEventListener('submit', (evt) => searchStores(evt));
 	getStoreTable();
 });

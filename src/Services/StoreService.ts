@@ -63,9 +63,14 @@ export default class StoreService {
 		});
 	}
 
-	findAll(owner_id: string, skip: number): Promise<null | Store[]> {
+	findAll(owner_id: string, skip: number, s: string): Promise<null | Store[]> {
+		const regExp = new RegExp(s, 'i');
 		return new Promise((resolve, reject) => {
-			StoreDB.find({ owner_id, deleted_at: null })
+			StoreDB.find({
+				owner_id,
+				deleted_at: null,
+				name: s === '' ? { $regex: /./ } : { $regex: regExp },
+			})
 				.sort({ created_at: -1 })
 				.skip(skip)
 				.limit(20)
@@ -78,14 +83,18 @@ export default class StoreService {
 		});
 	}
 
-	countAll(owner_id: string): Promise<null | number> {
+	countAll(owner_id: string, s: string): Promise<null | number> {
+		const regExp = new RegExp(s, 'i');
 		return new Promise((resolve, reject) => {
-			StoreDB.count({ owner_id, deleted_at: null }, (err, docs) => {
-				if (err) {
-					return reject(null);
+			StoreDB.count(
+				{ owner_id, deleted_at: null, name: s === '' ? { $regex: /./ } : { $regex: regExp } },
+				(err, docs) => {
+					if (err) {
+						return reject(null);
+					}
+					return resolve(docs);
 				}
-				return resolve(docs);
-			});
+			);
 		});
 	}
 

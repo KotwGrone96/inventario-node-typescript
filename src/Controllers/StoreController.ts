@@ -56,10 +56,14 @@ export default class StoreController {
 				message: 'Debe especificar el tipo de tabla',
 			});
 		}
-		const { type, page } = req.query;
+		const { type, page, s } = req.query;
 		if (type == 'stores') {
-			const stores = await this.storeService.findAll(req.session['user']!._id, Number(page));
-			const count = await this.storeService.countAll(req.session['user']!._id);
+			const stores = await this.storeService.findAll(
+				req.session['user']!._id,
+				Number(page),
+				String(s)
+			);
+			const count = await this.storeService.countAll(req.session['user']!._id, String(s));
 			if (!stores) {
 				return res.json({
 					ok: false,
