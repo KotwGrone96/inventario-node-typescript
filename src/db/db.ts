@@ -3,6 +3,7 @@ import { cwd } from 'process';
 import { join } from 'path';
 import { User } from '../models/User.model';
 import { Store } from '../models/Store.model';
+import { Provider } from '../models/Provider.model';
 
 //Crear una instancia de la base de datos
 const UserDB = new Datastore<User>({
@@ -21,7 +22,7 @@ const CategoryDB = new Datastore({
 	filename: join(cwd(), 'Database', 'Category.db'),
 	autoload: true,
 });
-const ProviderDB = new Datastore({
+const ProviderDB = new Datastore<Provider>({
 	filename: join(cwd(), 'Database', 'Provider.db'),
 	autoload: true,
 });

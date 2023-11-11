@@ -6,6 +6,8 @@ import {
 	postRequestFormData,
 } from '/js/helpers/request.js';
 
+import { loading } from '/js/helpers/loader.js';
+
 const add_ites = async (target) => {
 	const { type } = target.dataset;
 	if (type === 'store') {
@@ -151,9 +153,10 @@ const handlePaginationButtons = () => {
 };
 const getStoreTable = async (page = 0) => {
 	const input = document.getElementById('store_name');
+	loading('store-table-container');
 	const { value } = input;
 	try {
-		const res = await fetch(`/table?type=stores&page=${page}&s=${value}`);
+		const res = await fetch(`/store/table?type=stores&page=${page}&s=${value}`);
 		const data = await res.json();
 		if (!data.ok) {
 			console.log(data);

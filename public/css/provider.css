@@ -15,7 +15,7 @@
 	margin-top: 16px;
 }
 
-.store-bar {
+.provider-bar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -24,23 +24,23 @@
 	padding-top: 16px;
 }
 
-.store-bar #search_store {
+.provider-bar #search_provider {
 	width: 50%;
 	min-width: 250px;
 }
-.store-bar #search_store input {
+.provider-bar #search_provider input {
 	border: 1px solid #2c73d2;
 	padding: 8px 16px;
 	border-radius: 12px;
 	width: 50%;
 }
 
-.store-bar #search_store input:focus {
+.provider-bar #search_provider input:focus {
 	border: 1px solid #009ce9;
 	outline: 2px solid #009ce9;
 }
 
-.store-bar #search_store button[type='submit'] {
+.provider-bar #search_provider button[type='submit'] {
 	background-color: #2c73d2;
 	color: #ffffff;
 	border-radius: 8px;
@@ -50,11 +50,11 @@
 	width: 70px;
 }
 
-.store-bar #search_store button[type='submit']:hover {
+.provider-bar #search_provider button[type='submit']:hover {
 	background-color: #009ce9;
 }
 
-.store-bar #add_btn {
+.provider-bar #add_btn {
 	background-color: #4caf50;
 	color: #ffffff;
 	border-radius: 8px;
@@ -62,7 +62,7 @@
 	cursor: pointer;
 	transition: all 0.3s;
 }
-.store-bar #add_csv_btn {
+.provider-bar #add_csv_btn {
 	background-color: #4caf50;
 	color: #ffffff;
 	border-radius: 8px;
@@ -71,10 +71,10 @@
 	transition: all 0.3s;
 }
 
-.store-bar #add_btn:hover {
+.provider-bar #add_btn:hover {
 	background-color: #45a049;
 }
-.store-bar #add_csv_btn:hover {
+.provider-bar #add_csv_btn:hover {
 	background-color: #45a049;
 }
 

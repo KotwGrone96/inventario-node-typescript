@@ -7,7 +7,7 @@ config({ path: './../.env' });
 
 const webServer = createWebServer();
 const port = Number(process.env.PORT) || 81;
-const host = '127.0.0.1';
+const host = '0.0.0.0';
 
 const sv = webServer.listen(port, host, async () => {
 	const info = sv.address() as AddressInfo;

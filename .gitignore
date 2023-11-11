@@ -3,4 +3,6 @@ build/
 public/**/*.zip
 .env
 *.exe
+*.bat
+*.vbs
 Database/

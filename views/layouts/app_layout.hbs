@@ -13,6 +13,9 @@
         {{#eq path '/tiendas'}}
             <link rel="stylesheet" href="css/store.css">
         {{/eq}}
+        {{#eq path '/proveedores'}}
+            <link rel="stylesheet" href="css/provider.css">
+        {{/eq}}
        
 	</head>
 	<body>
@@ -25,6 +28,9 @@
         <script type="module" src="js/mainUI.js"></script>
         {{#eq path '/tiendas'}}
             <script type="module" src="js/storeUI.js"></script>
+        {{/eq}}
+        {{#eq path '/proveedores'}}
+            <script type="module" src="js/providerUI.js"></script>
         {{/eq}}
 	</body>
 </html>
