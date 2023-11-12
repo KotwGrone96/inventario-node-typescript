@@ -16,6 +16,9 @@
         {{#eq path '/proveedores'}}
             <link rel="stylesheet" href="css/provider.css">
         {{/eq}}
+        {{#eq path '/categorias'}}
+            <link rel="stylesheet" href="css/category.css">
+        {{/eq}}
        
 	</head>
 	<body>
@@ -31,6 +34,9 @@
         {{/eq}}
         {{#eq path '/proveedores'}}
             <script type="module" src="js/providerUI.js"></script>
+        {{/eq}}
+        {{#eq path '/categorias'}}
+            <script type="module" src="js/categoryUI.js"></script>
         {{/eq}}
 	</body>
 </html>

@@ -193,8 +193,8 @@ export default class ProviderController {
 			columns.includes('fecha') &&
 			columns.includes('correo')
 		) {
-			providerCSV.forEach(async (store) => {
-				const { nombre, direccion, telefono, fecha, correo } = store;
+			providerCSV.forEach(async (provider) => {
+				const { nombre, direccion, telefono, fecha, correo } = provider;
 				const newProvider = {
 					name: nombre,
 					address: direccion,

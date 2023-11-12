@@ -1,0 +1,28 @@
+{{#if noCategories}}
+	<h3>No hay categorías creadas</h3>
+{{else}}
+	<h4>Se encontraron {{count}} categorías</h4>
+	<table>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>#</th>
+			</tr>
+		</thead>
+		<tbody id='categories-table'>
+			{{#each categories}}
+				<tr>
+					<td>{{name}}</td>
+					<td class='action-buttons'>
+						<button data-row_id='{{_id}}' class='edit' title='Editar'>
+							<img src='/images/edit.svg' alt='edit' />
+						</button>
+						<button data-row_id='{{_id}}' class='delete' title='Eliminar'>
+							<img src='/images/delete.svg' alt='edit' />
+						</button>
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+{{/if}}

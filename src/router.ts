@@ -5,16 +5,19 @@ import { join } from 'path';
 
 import StoreController from './Controllers/StoreController';
 import ProviderController from './Controllers/ProviderController';
+import CategoryController from './Controllers/CategoryController';
 
 const router = Router();
 const upload = multer({ dest: join(cwd(), 'storage') });
 
 const storeController = new StoreController();
 const providerController = new ProviderController();
+const categoryController = new CategoryController();
 
 //***** TABLAS *****/
 router.get('/store/table', (req, res) => storeController.listTable(req, res));
 router.get('/provider/table', (req, res) => providerController.listTable(req, res));
+router.get('/category/table', (req, res) => categoryController.listTable(req, res));
 
 //***** TIENDAS *****/
 router.get('/store/:id', (req, res) => storeController.findOneById(req, res));
@@ -33,6 +36,15 @@ router.post('/provider/create/csv', upload.single('csvFile'), (req, res) =>
 );
 router.put('/provider/update', (req, res) => providerController.update(req, res));
 router.delete('/provider/:id', (req, res) => providerController.delete(req, res));
+
+//***** CATEGORÍAS *****/
+router.get('/category/:id', (req, res) => categoryController.findOneById(req, res));
+router.post('/category/create', (req, res) => categoryController.create(req, res));
+router.post('/category/create/csv', upload.single('csvFile'), (req, res) =>
+	categoryController.createCSV(req, res)
+);
+router.put('/category/update', (req, res) => categoryController.update(req, res));
+router.delete('/category/:id', (req, res) => categoryController.delete(req, res));
 
 // RUTA DE VISTAS
 router.get('/', (req, res) => {
