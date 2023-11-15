@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+h1 {
+	@apply text-2xl xl:text-3xl;
+	@apply font-bold;
+	@apply text-gray-500;
+}

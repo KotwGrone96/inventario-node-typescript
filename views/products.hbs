@@ -1,1 +1,18 @@
 <h1>Productos</h1>
+<div class='content'>
+	<div class='product-bar'>
+		<form id='search_product' action=''>
+			<input type='text' name='product_name' id='product_name' placeholder='Buscar...' />
+			<button type='submit'>buscar</button>
+		</form>
+		<div>
+			<button id='add_btn'>+
+				<a style='color: #FFFFFF;' href='/productos/nuevo'>Nuevo producto</a></button>
+			<button id='add_csv_btn' data-type='product'>+ Carga masiva</button>
+		</div>
+	</div>
+	<div class='main-table' id='product-table-container'>
+
+	</div>
+	<div id='pagination'></div>
+</div>

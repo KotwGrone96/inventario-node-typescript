@@ -3,40 +3,45 @@
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<title>{{title}}</title>
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/sweetalert2.js"></script>
-        <script src="js/jquery-3.7.1.min.js"></script>
-        <script src="js/pagination.min.js"></script>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/output.css">
+        {{!-- <link rel="stylesheet" href="/css/flowbite.min.css"> --}}
+        <script src="/js/sweetalert2.js"></script>
+        {{!-- <script src="/js/jquery-3.7.1.min.js"></script>
+        <script src="/js/pagination.min.js"></script> --}}
         {{#eq path '/'}}
-            <link rel="stylesheet" href="css/home.css">   
-        {{/eq}}
-        {{#eq path '/tiendas'}}
-            <link rel="stylesheet" href="css/store.css">
+            <link rel="stylesheet" href="/css/home.css">   
         {{/eq}}
         {{#eq path '/proveedores'}}
-            <link rel="stylesheet" href="css/provider.css">
+            <link rel="stylesheet" href="/css/provider.css">
         {{/eq}}
         {{#eq path '/categorias'}}
-            <link rel="stylesheet" href="css/category.css">
+            <link rel="stylesheet" href="/css/category.css">
         {{/eq}}
-       
+        {{#eq path '/productos'}}
+            <link rel="stylesheet" href="/css/product.css">
+        {{/eq}}
 	</head>
-	<body>
-        <div class="container">
+	<body class="font-roboto">
+        <div class="">
             {{> sidebar}}
-            <div class="main">
+            <div class="p-4 sm:ml-64 pt-20 bg-white min-h-screen">
                 {{{ body }}} 
             </div>
         </div>
-        <script type="module" src="js/mainUI.js"></script>
+        <script type="module" src="/js/mainUI.js"></script>
+        <script src="/js/flowbite.min.js"></script>
         {{#eq path '/tiendas'}}
-            <script type="module" src="js/storeUI.js"></script>
+            <script type="module" src="/js/storeUI.js"></script>
         {{/eq}}
         {{#eq path '/proveedores'}}
-            <script type="module" src="js/providerUI.js"></script>
+            <script type="module" src="/js/providerUI.js"></script>
         {{/eq}}
         {{#eq path '/categorias'}}
-            <script type="module" src="js/categoryUI.js"></script>
+            <script type="module" src="/js/categoryUI.js"></script>
+        {{/eq}}
+        {{#eq path '/productos'}}
+            <script type="module" src="/js/productUI.js"></script>
         {{/eq}}
 	</body>
 </html>

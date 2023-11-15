@@ -14,6 +14,13 @@ const helpers = {
 	neq: function (a, b, options) {
 		return a !== b ? options.fn(this) : options.inverse(this);
 	},
+	includes: function (texto: string, cadena: string, options) {
+		if (texto.includes(cadena)) {
+			return options.fn(this);
+		} else {
+			return options.inverse(this);
+		}
+	},
 };
 
 export default function createWebServer() {

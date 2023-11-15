@@ -1,0 +1,41 @@
+<h1>Nuevo producto</h1>
+<div class='content'>
+	<form action='' id='new_product_form'>
+		<input type='text' name='name' id='name' placeholder='Nombre' required />
+		<textarea
+			name='description'
+			id='description'
+			cols='30'
+			rows='10'
+			placeholder='Descripción'
+			required
+		></textarea>
+		<select name='providers' id='providers' required>
+			<option>Selecciones un proveedor</option>
+		</select>
+		<select name='categories' id='categories' required>
+			<option>Selecciones un categoría</option>
+		</select>
+		<input type='text' name='sku' id='sku' placeholder='SKU' required />
+		<input type='text' name='product_code' id='product_code' placeholder='Código' required />
+		<input
+			type='number'
+			name='public_price'
+			id='public_price'
+			min='0'
+			placeholder='Precio público'
+			required
+		/>
+		<input
+			type='number'
+			name='unit_price'
+			id='unit_price'
+			min='0'
+			placeholder='Precio por unidad'
+			required
+		/>
+		<input type='number' name='profit' id='profit' min='0' placeholder='Ganancia' required />
+		<input type='number' name='quantity' id='quantity' min='0' placeholder='Cantidad' required />
+		<input type='file' name='image' id='image' />
+	</form>
+</div>

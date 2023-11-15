@@ -5,6 +5,7 @@ import { User } from '../models/User.model';
 import { Store } from '../models/Store.model';
 import { Provider } from '../models/Provider.model';
 import { Category } from '../models/Category.model';
+import { Product } from '../models/Product.model';
 
 //Crear una instancia de la base de datos
 const UserDB = new Datastore<User>({
@@ -15,7 +16,7 @@ const StoreDB = new Datastore<Store>({
 	filename: join(cwd(), 'Database', 'Store.db'),
 	autoload: true,
 });
-const ProductDB = new Datastore({
+const ProductDB = new Datastore<Product>({
 	filename: join(cwd(), 'Database', 'Product.db'),
 	autoload: true,
 });
