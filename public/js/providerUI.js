@@ -73,7 +73,7 @@ const handleActionBtns = async (btn) => {
 	if (btn.classList.contains('delete')) {
 		const { row_id } = btn.dataset;
 		const choice = await Swal.fire({
-			title: '¿Desea eliminar el proveedor?',
+			title: `¿Desea eliminar el proveedor ${btn.dataset.name}?`,
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonText: 'Si',
@@ -172,9 +172,21 @@ const getProviderTable = async (page = 0) => {
 		table_container.innerHTML = data.html;
 		let pagination_btns = '';
 		for (let index = 0; index < total_providers / 20; index++) {
-			pagination_btns += `<button data-skip="${index * 20}" ${
-				page == index * 20 ? 'class="active"' : ''
-			}>${index + 1}</button>`;
+			// pagination_btns += `<button data-skip="${index * 20}" ${
+			// 	page == index * 20 ? 'class="active"' : ''
+			// }>${index + 1}</button>`;
+			pagination_btns += `<li>
+									<button
+										data-skip="${index * 20}"
+										class='flex items-center justify-center px-4 h-10 leading-tight border dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white
+										${
+											page == index * 20
+												? 'text-blue-600 border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700'
+												: 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700'
+										}'>
+										${index + 1}
+									</button>
+								</li>`;
 		}
 		pagination_container.innerHTML = pagination_btns;
 		addEventToBtns();

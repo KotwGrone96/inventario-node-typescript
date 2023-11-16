@@ -5,12 +5,15 @@
 {"deleted_at":{"$$date":1698725962314},"_id":"3K3Vhj2VMyp7MkEG"}
 {"name":"nueva tienda 15","owner_id":"TK8q22Kl1cjylfR1","address":"av 128","phone":"159654321","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1699742111480},"_id":"59gobhOH917DduBW"}
 {"name":"nueva tienda 17","owner_id":"TK8q22Kl1cjylfR1","address":"av 130","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816619242},"_id":"6micMW9TgZEp9ZKf"}
+{"name":"prueba tienda 2","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021558641},"updated_at":{"$$date":1700021558641},"deleted_at":null,"_id":"6vGOdl8EYCNpmcsd"}
 {"name":"nueva tienda 38","owner_id":"TK8q22Kl1cjylfR1","address":"av 151","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1699742112840},"_id":"6xu0POYqlg5xsGTb"}
 {"name":"nueva tienda 12","owner_id":"TK8q22Kl1cjylfR1","address":"av 125","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1699742114751},"_id":"7sHC3g0Zbb1FvRqR"}
 {"name":"nueva tienda 36","owner_id":"TK8q22Kl1cjylfR1","address":"av 149","phone":"123123123","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698898030781},"deleted_at":{"$$date":1699742116424},"_id":"7utt0Mo0aVgUicSj"}
 {"name":"nueva tienda 30","owner_id":"TK8q22Kl1cjylfR1","address":"av 143","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816621377},"_id":"86h3GKkwcDNtv98m"}
+{"name":"prueba tienda 10","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021616325},"updated_at":{"$$date":1700021616325},"deleted_at":null,"_id":"8UlPhOR1yaipyUZ9"}
 {"name":"nueva tienda 19","owner_id":"TK8q22Kl1cjylfR1","address":"av 132","phone":"555666888","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816623651},"_id":"9pDzMPkpCuhnJKCe"}
 {"name":"nueva tienda 24","owner_id":"TK8q22Kl1cjylfR1","address":"av 137","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816625506},"_id":"9vWyD3D2V0v4KOQZ"}
+{"name":"prueba tienda 1","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021553852},"updated_at":{"$$date":1700021553852},"deleted_at":null,"_id":"AXjp4oUkK6PtNtQu"}
 {"name":"nueva tienda 29","owner_id":"TK8q22Kl1cjylfR1","address":"av 142","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816628939},"_id":"Ahp09ZnPszE7XqHJ"}
 {"name":"nueva tienda 20","owner_id":"TK8q22Kl1cjylfR1","address":"av 133","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1698897980085},"_id":"AoqBe1y60kswaysD"}
 {"name":"nueva tienda 37","owner_id":"TK8q22Kl1cjylfR1","address":"av 150","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816627267},"_id":"AvwkDB4ZHtnDm2j8"}
@@ -19,6 +22,7 @@
 {"name":"nueva tienda 35","owner_id":"TK8q22Kl1cjylfR1","address":"av 148","phone":"753951852","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1699742119207},"_id":"ETzZ66kPU3MY5Dsi"}
 {"name":"nueva tienda 23","owner_id":"TK8q22Kl1cjylfR1","address":"av 136","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1699742120832},"_id":"FCHb6A7c1WNFoN7r"}
 {"name":"nueva tienda 31","owner_id":"TK8q22Kl1cjylfR1","address":"av 144","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1699742122576},"_id":"FudPYrtzI7S0IOEt"}
+{"name":"prueba tienda 123","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021623054},"updated_at":{"$$date":1700021623054},"deleted_at":null,"_id":"G5U5dPpYN5ViWaga"}
 {"deleted_at":{"$$date":1698726106761},"_id":"GzcL71ZOOVPPWgbG"}
 {"name":"nueva tienda 33","owner_id":"TK8q22Kl1cjylfR1","address":"av 146","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1699742123975},"_id":"JfcufLvb2WWlG5pg"}
 {"name":"nueva tienda 11","owner_id":"TK8q22Kl1cjylfR1","address":"av 124","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1699742125520},"_id":"JjnSmJF8AkV7R9H2"}
@@ -30,7 +34,7 @@
 {"name":"nueva tienda 29","owner_id":"TK8q22Kl1cjylfR1","address":"av 142","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1699742126823},"_id":"RdZYs6At0hnAJ3n4"}
 {"name":"nueva tienda 26","owner_id":"TK8q22Kl1cjylfR1","address":"av 139","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816635547},"_id":"SREXF2MWV8c0td6g"}
 {"name":"nueva tienda 18","owner_id":"TK8q22Kl1cjylfR1","address":"av 131","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816637083},"_id":"TmMaGOLq0pwMEb3V"}
-{"name":"nueva tienda 21","owner_id":"TK8q22Kl1cjylfR1","address":"av 134","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"U3BxUSQxwe5lAi1u"}
+{"name":"nueva tienda 21","owner_id":"TK8q22Kl1cjylfR1","address":"av 134","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1700020775843},"_id":"U3BxUSQxwe5lAi1u"}
 {"deleted_at":{"$$date":1698726092137},"_id":"YVDgmRQ655GlYtmX"}
 {"name":"nueva tienda 16","owner_id":"TK8q22Kl1cjylfR1","address":"av 129","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816638802},"_id":"Zzns6zTOszrJqe9Z"}
 {"name":"nueva tienda 34","owner_id":"TK8q22Kl1cjylfR1","address":"av 147","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816640652},"_id":"arklrOoifAFCX32G"}
@@ -40,6 +44,7 @@
 {"name":"nueva tienda 26","owner_id":"TK8q22Kl1cjylfR1","address":"av 139","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"bqiBnLsRphOITI3T"}
 {"name":"nueva tienda 16","owner_id":"TK8q22Kl1cjylfR1","address":"av 129","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"cnsYkIBk9xiPSYrO"}
 {"name":"nueva tienda 28","owner_id":"TK8q22Kl1cjylfR1","address":"av 141","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"djXIKAzxobrwtrHY"}
+{"name":"prueba tienda 4","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021572149},"updated_at":{"$$date":1700021572149},"deleted_at":null,"_id":"eG0O44sTRA0DMK21"}
 {"name":"nueva tienda 25","owner_id":"TK8q22Kl1cjylfR1","address":"av 138","phone":"123654987","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1699742102792},"_id":"ekJqJge55vX9XFkV"}
 {"name":"nueva tienda 35","owner_id":"TK8q22Kl1cjylfR1","address":"av 148","phone":"753951852","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816642298},"_id":"evacJttWeaPT1c3z"}
 {"deleted_at":{"$$date":1698726071681},"_id":"gvR68Wynflf2nPEm"}
@@ -48,34 +53,27 @@
 {"name":"nueva tienda 10","owner_id":"TK8q22Kl1cjylfR1","address":"av 123","phone":"","created_at":{"$$date":1698816418449},"updated_at":{"$$date":1698816418449},"deleted_at":{"$$date":1698816668675},"_id":"iHp51Lbcb70cfnIR"}
 {"deleted_at":{"$$date":1698726035089},"_id":"ijYDMp9Wj5aUc0YD"}
 {"name":"nueva tienda 32","owner_id":"TK8q22Kl1cjylfR1","address":"av 145","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"jLxWFBbhEWqZJIJ4"}
+{"name":"prueba tienda 654987","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021630531},"updated_at":{"$$date":1700021630531},"deleted_at":null,"_id":"km2Gq2uDcbwVDkh0"}
 {"name":"nueva tienda 27","owner_id":"TK8q22Kl1cjylfR1","address":"av 140","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816645883},"_id":"lmeP3nunBmtcthiR"}
 {"name":"nueva tienda 31","owner_id":"TK8q22Kl1cjylfR1","address":"av 144","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816647626},"_id":"lniQYiLpBJ4agK6R"}
+{"name":"prueba tienda 50","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021597244},"updated_at":{"$$date":1700021597244},"deleted_at":null,"_id":"m4ExIgEVpC67LDxK"}
 {"name":"nueva tienda 38","owner_id":"TK8q22Kl1cjylfR1","address":"av 151","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816649299},"_id":"nTbK0nmItfvjdle4"}
 {"name":"nueva tienda 21","owner_id":"TK8q22Kl1cjylfR1","address":"av 134","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816650971},"_id":"nXdeS1twvBWlgCOm"}
 {"name":"nueva tienda 28","owner_id":"TK8q22Kl1cjylfR1","address":"av 141","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816652794},"_id":"oBw9co2Dvmiezk6w"}
 {"name":"nueva tienda 23","owner_id":"TK8q22Kl1cjylfR1","address":"av 136","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816654587},"_id":"oe9AplEYimXjhul1"}
 {"name":"Tienda individual","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1698816770751},"updated_at":{"$$date":1698816770751},"deleted_at":{"$$date":1698897989396},"_id":"qOS15TFBAADXF0tP"}
 {"name":"nueva tienda 22","owner_id":"TK8q22Kl1cjylfR1","address":"av 135","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"qdCmKxUwzFvzFvml"}
-{"name":"nueva tienda 14","owner_id":"TK8q22Kl1cjylfR1","address":"av 127","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"r7ypf4qjBqrQcvt1"}
+{"name":"nueva tienda 156","owner_id":"TK8q22Kl1cjylfR1","address":"av 127","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1700020786877},"deleted_at":null,"_id":"r7ypf4qjBqrQcvt1"}
 {"name":"nueva tienda 17","owner_id":"TK8q22Kl1cjylfR1","address":"av 130","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"rlmObY5Lgp82Nr1v"}
 {"name":"nueva tienda 32","owner_id":"TK8q22Kl1cjylfR1","address":"av 145","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816655987},"_id":"s03qR1OHG1cpENif"}
 {"name":"nueva tienda 20","owner_id":"TK8q22Kl1cjylfR1","address":"av 133","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816658946},"_id":"t77flGPuGgW2sfME"}
 {"name":"nueva tienda 13","owner_id":"TK8q22Kl1cjylfR1","address":"av 126","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816660755},"_id":"tXVhk2PB4qSf0e4R"}
 {"name":"nueva tienda 24","owner_id":"TK8q22Kl1cjylfR1","address":"av 137","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"tpDHxd2WyXk7VBa2"}
+{"name":"prueba tienda 3","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021564797},"updated_at":{"$$date":1700021564797},"deleted_at":null,"_id":"ubM6muBCNWismGfX"}
 {"name":"nueva tienda 27","owner_id":"TK8q22Kl1cjylfR1","address":"av 140","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"vs1YvshbwuUeD5N9"}
 {"name":"nueva tienda 33","owner_id":"TK8q22Kl1cjylfR1","address":"av 146","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816662779},"_id":"wKHIU4FSky6DLQif"}
 {"name":"nueva tienda 11","owner_id":"TK8q22Kl1cjylfR1","address":"av 124","phone":"","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816665563},"_id":"wWthOb8HqJqJ0WBq"}
 {"name":"nueva tienda 15","owner_id":"TK8q22Kl1cjylfR1","address":"av 128","phone":"159654321","created_at":{"$$date":1698816418450},"updated_at":{"$$date":1698816418450},"deleted_at":{"$$date":1698816667019},"_id":"wwSesp3oUr437R4O"}
 {"name":"nueva tienda 34","owner_id":"TK8q22Kl1cjylfR1","address":"av 147","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":null,"_id":"xpChCX0vFXWxnM6O"}
 {"name":"Tienda nueva 1","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1698729055131},"updated_at":{"$$date":1698729055131},"deleted_at":{"$$date":1698816674179},"_id":"yIskeIh4Gt5rn4sx"}
-{"name":"nueva tienda 21","owner_id":"TK8q22Kl1cjylfR1","address":"av 134","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1698816698812},"deleted_at":{"$$date":1700020775843},"_id":"U3BxUSQxwe5lAi1u"}
-{"name":"nueva tienda 156","owner_id":"TK8q22Kl1cjylfR1","address":"av 127","phone":"","created_at":{"$$date":1698816698812},"updated_at":{"$$date":1700020786877},"deleted_at":null,"_id":"r7ypf4qjBqrQcvt1"}
-{"name":"prueba tienda 1","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021553852},"updated_at":{"$$date":1700021553852},"deleted_at":null,"_id":"AXjp4oUkK6PtNtQu"}
-{"name":"prueba tienda 2","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021558641},"updated_at":{"$$date":1700021558641},"deleted_at":null,"_id":"6vGOdl8EYCNpmcsd"}
-{"name":"prueba tienda 3","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021564797},"updated_at":{"$$date":1700021564797},"deleted_at":null,"_id":"ubM6muBCNWismGfX"}
-{"name":"prueba tienda 4","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021572149},"updated_at":{"$$date":1700021572149},"deleted_at":null,"_id":"eG0O44sTRA0DMK21"}
-{"name":"prueba tienda 50","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021597244},"updated_at":{"$$date":1700021597244},"deleted_at":null,"_id":"m4ExIgEVpC67LDxK"}
 {"name":"prueba tienda 60","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021610381},"updated_at":{"$$date":1700021610381},"deleted_at":null,"_id":"ysMXXmzo6Avvb3n3"}
-{"name":"prueba tienda 10","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021616325},"updated_at":{"$$date":1700021616325},"deleted_at":null,"_id":"8UlPhOR1yaipyUZ9"}
-{"name":"prueba tienda 123","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021623054},"updated_at":{"$$date":1700021623054},"deleted_at":null,"_id":"G5U5dPpYN5ViWaga"}
-{"name":"prueba tienda 654987","owner_id":"TK8q22Kl1cjylfR1","address":"","phone":"","created_at":{"$$date":1700021630531},"updated_at":{"$$date":1700021630531},"deleted_at":null,"_id":"km2Gq2uDcbwVDkh0"}

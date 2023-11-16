@@ -1,5 +1,5 @@
 <h1>Nuevo producto</h1>
-<div class='content'>
+{{! <div class='content'>
 	<form action='' id='new_product_form'>
 		<input type='text' name='name' id='name' placeholder='Nombre' required />
 		<textarea
@@ -37,5 +37,371 @@
 		<input type='number' name='profit' id='profit' min='0' placeholder='Ganancia' required />
 		<input type='number' name='quantity' id='quantity' min='0' placeholder='Cantidad' required />
 		<input type='file' name='image' id='image' />
+	</form>
+</div> }}
+
+<div
+	class='flex flex-col bg-white border border-gray-200 rounded-lg shadow md:flex-row justify-start mt-4 gap-4'
+>
+	<div
+		class='w-full flex justify-center items-center rounded-t-lg min-h-[300px] md:w-48 md:rounded-none md:rounded-s-lg border cursor-pointer hover:bg-gray-50'
+	>
+		<h4 class='text-center'>Subir imagen</h4>
+	</div>
+	<form class='w-full py-4 md:max-w-[500px] px-4 md:px-0 flex flex-col gap-4'>
+		<div class='relative'>
+			<input
+				type='text'
+				id='name'
+				name='name'
+				class='block bg-gray-50 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+				placeholder=' '
+			/>
+			<label
+				for='name'
+				class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
+			>Nombre *</label>
+		</div>
+		<div class='relative'>
+			<textarea
+				id='description'
+				name='description'
+				class='block bg-gray-50 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer resize-none'
+				placeholder=' '
+			></textarea>
+			<label
+				for='description'
+				class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
+			>Descripción</label>
+		</div>
+
+		<div class='flex justify-start items-center gap-4'>
+			<div>
+				<button
+					id='dropdownSearchButtonProvider'
+					data-dropdown-toggle='dropdownSearchProvider'
+					class='inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+					type='button'
+				>Proveedores
+					<svg
+						class='w-2.5 h-2.5 ms-2.5'
+						aria-hidden='true'
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 10 6'
+					>
+						<path
+							stroke='currentColor'
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							stroke-width='2'
+							d='m1 1 4 4 4-4'
+						/>
+					</svg></button>
+
+				<!-- Dropdown menu -->
+				<div
+					id='dropdownSearchProvider'
+					class='z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700'
+				>
+					<div class='p-3'>
+						<label for='input-group-search' class='sr-only'>Search</label>
+						<div class='relative'>
+							<div class='absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none'>
+								<svg
+									class='w-4 h-4 text-gray-500 dark:text-gray-400'
+									aria-hidden='true'
+									xmlns='http://www.w3.org/2000/svg'
+									fill='none'
+									viewBox='0 0 20 20'
+								>
+									<path
+										stroke='currentColor'
+										stroke-linecap='round'
+										stroke-linejoin='round'
+										stroke-width='2'
+										d='m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z'
+									/>
+								</svg>
+							</div>
+							<input
+								type='text'
+								id='input-group-search'
+								class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+								placeholder='Search user'
+							/>
+						</div>
+					</div>
+					<ul
+						class='h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200'
+						aria-labelledby='dropdownSearchButtonProvider'
+					>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-11'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-11'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Bonnie Green</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									checked
+									id='checkbox-item-12'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-12'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Jese Leos</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-13'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-13'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Michael Gough</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-14'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-14'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Robert Wall</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-15'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-15'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Joseph Mcfall</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-16'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-16'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Leslie Livingston</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-17'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-17'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Roberta Casas</label>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<button
+					id='dropdownSearchButtonProvider'
+					data-dropdown-toggle='dropdownSearchCategory'
+					class='inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+					type='button'
+				>Categorías
+					<svg
+						class='w-2.5 h-2.5 ms-2.5'
+						aria-hidden='true'
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 10 6'
+					>
+						<path
+							stroke='currentColor'
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							stroke-width='2'
+							d='m1 1 4 4 4-4'
+						/>
+					</svg></button>
+
+				<!-- Dropdown menu -->
+				<div
+					id='dropdownSearchCategory'
+					class='z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700'
+				>
+					<div class='p-3'>
+						<label for='input-group-search' class='sr-only'>Search</label>
+						<div class='relative'>
+							<div class='absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none'>
+								<svg
+									class='w-4 h-4 text-gray-500 dark:text-gray-400'
+									aria-hidden='true'
+									xmlns='http://www.w3.org/2000/svg'
+									fill='none'
+									viewBox='0 0 20 20'
+								>
+									<path
+										stroke='currentColor'
+										stroke-linecap='round'
+										stroke-linejoin='round'
+										stroke-width='2'
+										d='m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z'
+									/>
+								</svg>
+							</div>
+							<input
+								type='text'
+								id='input-group-search'
+								class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+								placeholder='Search user'
+							/>
+						</div>
+					</div>
+					<ul
+						class='h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200'
+						aria-labelledby='dropdownSearchButtonProvider'
+					>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-11'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-11'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Bonnie Green</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									checked
+									id='checkbox-item-12'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-12'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Jese Leos</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-13'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-13'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Michael Gough</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-14'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-14'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Robert Wall</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-15'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-15'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Joseph Mcfall</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-16'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-16'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Leslie Livingston</label>
+							</div>
+						</li>
+						<li>
+							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
+								<input
+									id='checkbox-item-17'
+									type='checkbox'
+									value=''
+									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
+								/>
+								<label
+									for='checkbox-item-17'
+									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
+								>Roberta Casas</label>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
 	</form>
 </div>
