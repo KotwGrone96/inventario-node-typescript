@@ -78,6 +78,17 @@ export default class CategoryService {
 		});
 	}
 
+	findAllNoLimit(owner_id: string): Promise<null | Category[]> {
+		return new Promise((resolve, reject) => {
+			CategoryDB.find({ owner_id, deleted_at: null }, (err: Error, docs: Category[]) => {
+				if (err) {
+					return reject(null);
+				}
+				return resolve(docs);
+			});
+		});
+	}
+
 	countAll(owner_id: string, s: string): Promise<null | number> {
 		const regExp = new RegExp(s, 'i');
 		return new Promise((resolve, reject) => {

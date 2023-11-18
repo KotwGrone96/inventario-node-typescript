@@ -88,6 +88,7 @@ router.put('/store/update', (req, res) => storeController.update(req, res));
 router.delete('/store/:id', (req, res) => storeController.delete(req, res));
 
 //***** PROVEEDORES *****/
+router.get('/provider/findAll', (req, res) => providerController.findAll(req, res));
 router.get('/provider/:id', (req, res) => providerController.findOneById(req, res));
 router.post('/provider/create', (req, res) => providerController.create(req, res));
 router.post('/provider/create/csv', upload.single('csvFile'), (req, res) =>
@@ -97,6 +98,7 @@ router.put('/provider/update', (req, res) => providerController.update(req, res)
 router.delete('/provider/:id', (req, res) => providerController.delete(req, res));
 
 //***** CATEGORÍAS *****/
+router.get('/category/findAll', (req, res) => categoryController.findAll(req, res));
 router.get('/category/:id', (req, res) => categoryController.findOneById(req, res));
 router.post('/category/create', (req, res) => categoryController.create(req, res));
 router.post('/category/create/csv', upload.single('csvFile'), (req, res) =>

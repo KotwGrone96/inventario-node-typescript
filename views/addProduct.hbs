@@ -1,54 +1,14 @@
 <h1>Nuevo producto</h1>
-{{! <div class='content'>
-	<form action='' id='new_product_form'>
-		<input type='text' name='name' id='name' placeholder='Nombre' required />
-		<textarea
-			name='description'
-			id='description'
-			cols='30'
-			rows='10'
-			placeholder='Descripción'
-			required
-		></textarea>
-		<select name='providers' id='providers' required>
-			<option>Selecciones un proveedor</option>
-		</select>
-		<select name='categories' id='categories' required>
-			<option>Selecciones un categoría</option>
-		</select>
-		<input type='text' name='sku' id='sku' placeholder='SKU' required />
-		<input type='text' name='product_code' id='product_code' placeholder='Código' required />
-		<input
-			type='number'
-			name='public_price'
-			id='public_price'
-			min='0'
-			placeholder='Precio público'
-			required
-		/>
-		<input
-			type='number'
-			name='unit_price'
-			id='unit_price'
-			min='0'
-			placeholder='Precio por unidad'
-			required
-		/>
-		<input type='number' name='profit' id='profit' min='0' placeholder='Ganancia' required />
-		<input type='number' name='quantity' id='quantity' min='0' placeholder='Cantidad' required />
-		<input type='file' name='image' id='image' />
-	</form>
-</div> }}
-
 <div
 	class='flex flex-col bg-white border border-gray-200 rounded-lg shadow md:flex-row justify-start mt-4 gap-4'
+	id='addProductContainer'
 >
 	<div
 		class='w-full flex justify-center items-center rounded-t-lg min-h-[300px] md:w-48 md:rounded-none md:rounded-s-lg border cursor-pointer hover:bg-gray-50'
 	>
 		<h4 class='text-center'>Subir imagen</h4>
 	</div>
-	<form class='w-full py-4 md:max-w-[500px] px-4 md:px-0 flex flex-col gap-4'>
+	<form id='addProductForm' class='w-full py-4 md:max-w-[500px] px-4 md:px-0 flex flex-col gap-4'>
 		<div class='relative'>
 			<input
 				type='text'
@@ -56,11 +16,12 @@
 				name='name'
 				class='block bg-gray-50 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
 				placeholder=' '
+				autocomplete='off'
 			/>
 			<label
 				for='name'
 				class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
-			>Nombre *</label>
+			><span class="after:content-['*'] after:text-red-500">Nombre</span></label>
 		</div>
 		<div class='relative'>
 			<textarea
@@ -76,11 +37,11 @@
 		</div>
 
 		<div class='flex justify-start items-center gap-4'>
-			<div>
+			<div class='w-full'>
 				<button
 					id='dropdownSearchButtonProvider'
 					data-dropdown-toggle='dropdownSearchProvider'
-					class='inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+					class='w-full inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
 					type='button'
 				>Proveedores
 					<svg
@@ -102,10 +63,10 @@
 				<!-- Dropdown menu -->
 				<div
 					id='dropdownSearchProvider'
-					class='z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700'
+					class='z-50 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700'
 				>
 					<div class='p-3'>
-						<label for='input-group-search' class='sr-only'>Search</label>
+						<label for='input-group-search-provider' class='sr-only'>Search</label>
 						<div class='relative'>
 							<div class='absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none'>
 								<svg
@@ -126,123 +87,25 @@
 							</div>
 							<input
 								type='text'
-								id='input-group-search'
+								id='input-group-search-provider'
 								class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-								placeholder='Search user'
+								placeholder='Buscar proveedor'
 							/>
 						</div>
 					</div>
 					<ul
 						class='h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200'
 						aria-labelledby='dropdownSearchButtonProvider'
+						id='dropDownProviderList'
 					>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-11'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-11'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Bonnie Green</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									checked
-									id='checkbox-item-12'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-12'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Jese Leos</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-13'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-13'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Michael Gough</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-14'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-14'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Robert Wall</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-15'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-15'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Joseph Mcfall</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-16'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-16'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Leslie Livingston</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-17'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-17'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Roberta Casas</label>
-							</div>
-						</li>
 					</ul>
 				</div>
 			</div>
-			<div>
+			<div class='w-full'>
 				<button
-					id='dropdownSearchButtonProvider'
+					id='dropdownSearchButtonCategory'
 					data-dropdown-toggle='dropdownSearchCategory'
-					class='inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+					class='w-full inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
 					type='button'
 				>Categorías
 					<svg
@@ -264,7 +127,7 @@
 				<!-- Dropdown menu -->
 				<div
 					id='dropdownSearchCategory'
-					class='z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700'
+					class='z-50 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700'
 				>
 					<div class='p-3'>
 						<label for='input-group-search' class='sr-only'>Search</label>
@@ -288,120 +151,139 @@
 							</div>
 							<input
 								type='text'
-								id='input-group-search'
+								id='input-group-search-category'
 								class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-								placeholder='Search user'
+								placeholder='Buscar categoría'
 							/>
 						</div>
 					</div>
 					<ul
 						class='h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200'
 						aria-labelledby='dropdownSearchButtonProvider'
+						id='dropDownCategoryList'
 					>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-11'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-11'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Bonnie Green</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									checked
-									id='checkbox-item-12'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-12'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Jese Leos</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-13'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-13'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Michael Gough</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-14'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-14'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Robert Wall</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-15'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-15'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Joseph Mcfall</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-16'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-16'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Leslie Livingston</label>
-							</div>
-						</li>
-						<li>
-							<div class='flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600'>
-								<input
-									id='checkbox-item-17'
-									type='checkbox'
-									value=''
-									class='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500'
-								/>
-								<label
-									for='checkbox-item-17'
-									class='w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300'
-								>Roberta Casas</label>
-							</div>
-						</li>
 					</ul>
 				</div>
 			</div>
 
 		</div>
-
+		<div class='flex justify-start items-center gap-4'>
+			<div class='relative w-full'>
+				<input
+					type='text'
+					id='sku'
+					name='sku'
+					class='block bg-gray-50 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+					placeholder=' '
+					autocomplete='off'
+				/>
+				<label
+					for='sku'
+					class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
+				><span class="after:content-['*'] after:text-red-500">SKU</span></label>
+			</div>
+			<div class='relative w-full'>
+				<input
+					type='text'
+					id='product_code'
+					name='product_code'
+					class='block bg-gray-50 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+					placeholder=' '
+					autocomplete='off'
+				/>
+				<label
+					for='product_code'
+					class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
+				><span class="after:content-['*'] after:text-red-500">Código</span></label>
+			</div>
+		</div>
+		<div class='flex justify-start items-center gap-4'>
+			<div class='relative w-full'>
+				<input
+					type='number'
+					min='1'
+					id='unit_price'
+					name='unit_price'
+					class='block bg-gray-50 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+					placeholder=' '
+				/>
+				<span class='absolute top-3 right-8 text-green-700 font-medium text-lg'>$</span>
+				<label
+					for='unit_price'
+					class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
+				><span class="after:content-['*'] after:text-red-500">Precio unidad</span></label>
+			</div>
+			<div class='relative w-full'>
+				<input
+					type='number'
+					min='1'
+					value='30'
+					id='profit'
+					name='profit'
+					class='block bg-gray-50 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer before:first-letter:text-green-500'
+					placeholder=' '
+					autocomplete='off'
+				/>
+				<span class='absolute top-3 right-8 text-blue-700 font-medium text-lg'>%</span>
+				<label
+					for='profit'
+					class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
+				><span class="after:content-['*'] after:text-red-500">Procentaje de ganancia</span></label>
+			</div>
+		</div>
+		<div class='relative w-full'>
+			<input
+				type='number'
+				min='1'
+				id='public_price'
+				name='public_price'
+				class='block bg-gray-50 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+				placeholder=' '
+				autocomplete='off'
+			/>
+			<span class='absolute top-3 right-8 text-green-700 font-medium text-lg'>$</span>
+			<label
+				for='public_price'
+				class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
+			><span class="after:content-['*'] after:text-red-500">Precio público</span></label>
+		</div>
+		<div class='relative w-full'>
+			<input
+				type='number'
+				min='1'
+				id='earning'
+				name='earning'
+				class='block bg-gray-200 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+				placeholder=' '
+				autocomplete='off'
+				disabled
+			/>
+			<span class='absolute top-3 right-8 text-green-700 font-medium text-lg'>$</span>
+			<label
+				for='earning'
+				class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-200 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
+			>Ganancia x Unid.</label>
+		</div>
+		<div class='relative w-full'>
+			<input
+				type='number'
+				min='1'
+				id='quantity'
+				name='quantity'
+				class='block bg-gray-50 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+				placeholder=' '
+				autocomplete='off'
+			/>
+			<label
+				for='quantity'
+				class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-50 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1'
+			><span class="after:content-['*'] after:text-red-500">Cantidad</span></label>
+		</div>
+		<button
+			type='submit'
+			class='focus:outline-none text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'
+		>Crear</button>
 	</form>
 </div>
+
+<script type='module' src='/js/addProductUI.js'></script>

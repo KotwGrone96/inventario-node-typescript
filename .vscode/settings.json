@@ -1,6 +1,11 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.useTabs": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.useTabs": true,
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"prettier.arrowParens": "always",
+	"prettier.semi": true,
+	"prettier.singleQuote": true,
+	"editor.wordWrap": "on",
+	"prettier.printWidth": 100
 }

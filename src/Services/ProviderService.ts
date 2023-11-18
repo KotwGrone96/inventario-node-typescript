@@ -85,11 +85,26 @@ export default class ProviderService {
 		});
 	}
 
+	findAllNoLimit(owner_id: string): Promise<null | Provider[]> {
+		return new Promise((resolve, reject) => {
+			ProviderDB.find({ owner_id, deleted_at: null }, (err: Error, docs: Provider[]) => {
+				if (err) {
+					return reject(null);
+				}
+				return resolve(docs);
+			});
+		});
+	}
+
 	countAll(owner_id: string, s: string): Promise<null | number> {
 		const regExp = new RegExp(s, 'i');
 		return new Promise((resolve, reject) => {
 			ProviderDB.count(
-				{ owner_id, deleted_at: null, name: s === '' ? { $regex: /./ } : { $regex: regExp } },
+				{
+					owner_id,
+					deleted_at: null,
+					name: s === '' ? { $regex: /./ } : { $regex: regExp },
+				},
 				(err, docs) => {
 					if (err) {
 						return reject(null);

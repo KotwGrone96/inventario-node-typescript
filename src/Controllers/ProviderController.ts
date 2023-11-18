@@ -83,6 +83,26 @@ export default class ProviderController {
 		});
 	}
 
+	async findAll(req: Request, res: Response) {
+		const providers = await this.providerService.findAllNoLimit(req.session['user']!._id);
+		if (!providers) {
+			return res.json({
+				ok: false,
+				message: 'Error en la consulta a base de datos',
+			});
+		}
+		let noProviders = false;
+		if (providers.length === 0) {
+			noProviders = true;
+		}
+		return res.json({
+			ok: true,
+			message: 'Lista de proveedores',
+			providers,
+			noProviders,
+		});
+	}
+
 	async delete(req: Request, res: Response) {
 		try {
 			const { id } = req.params;

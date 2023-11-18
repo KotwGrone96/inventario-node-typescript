@@ -135,6 +135,26 @@ export default class CategoryController {
 		});
 	}
 
+	async findAll(req: Request, res: Response) {
+		const categories = await this.categoryService.findAllNoLimit(req.session['user']!._id);
+		if (!categories) {
+			return res.json({
+				ok: false,
+				message: 'Error en la consulta a base de datos',
+			});
+		}
+		let noCategories = false;
+		if (categories.length === 0) {
+			noCategories = true;
+		}
+		return res.json({
+			ok: true,
+			message: 'Lista de categorías',
+			categories,
+			noCategories,
+		});
+	}
+
 	async findOneById(req: Request, res: Response) {
 		try {
 			const { id } = req.params;
